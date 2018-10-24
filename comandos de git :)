@@ -1,5 +1,5 @@
 git init -> iniciar git solo si existe el proyecto
-git remote add origin git@gitlab.com:pipemaldonado/ofi-management.git -> enlazar con proyecto
+git remote add origin git@github.com:Diego-c-8/my_aplication.git -> enlazar con proyecto
 
 git add "archivo" -> añadir archivo para commit (en caso de ser toda la carpeta raiz utilizar "." sin comillas)
 git commit -m "comentario" -> Comentario para el commit
