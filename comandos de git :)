@@ -1,15 +1,41 @@
-git init -> iniciar git solo si existe el proyecto
-git remote add origin git@github.com:Diego-c-8/my_aplication.git -> enlazar con proyecto
+//Generar llave ssh
+1) Ir a la carpeta -> cd ~/.ssh
+2) Generar la llave -> ssh-keygen
+3) ver llave ssh -> cat ~/.ssh/id_rsa.pub
+4) pegar llave en configuración de github.
 
-git add "archivo" -> añadir archivo para commit (en caso de ser toda la carpeta raiz utilizar "." sin comillas)
-git commit -m "comentario" -> Comentario para el commit
-git push -u origin master -> subir archivos actualizados al repositorio
 
-git pull origin master -> Actualizar repositorio
+//Comandos de Configuración de Git
+git config --global user.name "John Doe"
+git config --global user.email johndoe@example.com
 
-git log -> Muestra el historíal de confirmaciones
 
-Generar llave ssh
-cd ~/.ssh
-ssh-keygen
-cat ~/.ssh/id_rsa.pub
+//Comandos para enlazar proyecto de github a carpeta de trabajo
+1) Comenzar configuración inicial del proyecto -> git init
+2) enlazar con proyecto git a la carpeta -> git remote add origin git@github.com:Diego-c-8/my_aplication.git
+
+
+//Descargar ultima versión del proyecto
+1) en canso de ser el master -> git pull origin master
+2) en caso de ser una branch -> git pull origin nombre_branch
+
+
+//Subir actualizaciones al repositorio
+1) Añadir archivo para commit (en caso de ser toda la carpeta raiz utilizar "." sin comillas) -> git add "archivo"
+2) Comentario para el commit-> git commit -m "comentario"
+3) Subir archivos actualizados al repositorio -> git push -u origin master
+
+
+//En caso de trabajar con una branch
+1) Bajar repositorio de la branch -> git pull origin nombre_branch
+2) Crear una branch dentro de la carpeta donde se encuentra el proyecto -> git branch nombre_branch
+3) Cambiar de branch -> git checkout nombre_branch
+4) Añadir archivo para commit (en caso de ser toda la carpeta raiz utilizar "." sin comillas) -> git add "archivo"
+5) Comentario para el commit-> git commit -m "comentario"
+6) Subir archivos actualizados al repositorio -> git push -u origin nombre_branch
+
+**En caso de que pida actualizar el repositorio, utilizar el compando 1)
+
+//Ver historial del repositorio
+1) -> git log
+
