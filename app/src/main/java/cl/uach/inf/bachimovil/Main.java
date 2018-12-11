@@ -79,6 +79,8 @@ public class Main extends AppCompatActivity{
     public void onClick(View v){
         eventosFragment.onClick(v);
         cursosFragment.onClick(v);
+        planFragment.onClick(v);
+
     }
 
 }

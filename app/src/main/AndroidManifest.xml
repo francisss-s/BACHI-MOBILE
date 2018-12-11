@@ -20,7 +20,10 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CursosActivity"></activity>
+        <activity android:name=".CursosActivity" />
+        <activity android:name=".Horario" />
+        <activity android:name=".Calendario" />
+        <activity android:name=".ModPeriod"></activity>
     </application>
 
 </manifest>
