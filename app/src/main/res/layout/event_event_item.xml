@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/eventItem"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="#FFF"
+    android:padding="@dimen/widget_margin">
+
+    <LinearLayout
+        android:id="@+id/EventLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingBottom="20px"
+        android:paddingLeft="30px"
+        android:paddingTop="20px">
+
+        <TextView
+            android:id="@+id/EventTitle"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="3px"
+            android:text="Fiesta de fin de semestre"
+            android:textColor="#B33"
+            android:textSize="17sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/EventDate"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingBottom="3px"
+            android:text="Mañana a las 17:30hrs"
+            android:textColor="#888"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/EventPoster"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Jar Jar Binks"
+
+            android:textColor="#AAA"
+            android:textSize="16sp" />
+    </LinearLayout>
+
+</RelativeLayout>
