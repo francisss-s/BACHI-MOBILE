@@ -1,6 +1,7 @@
 package cl.uach.inf.bachimovil;
 
 import android.animation.ValueAnimator;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
@@ -12,6 +13,7 @@ import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.HorizontalScrollView;
 import android.widget.LinearLayout;
@@ -38,6 +40,9 @@ public class EventsFragment extends Fragment implements AsyncResponse
     SwipeRefreshLayout tagRefresher,eventRefresher;
     View view;
     ListView tagList,eventList;
+    Button postButton;
+
+    Intent myIntent;
 
     // Constructor
     public EventsFragment() {}
@@ -59,6 +64,8 @@ public class EventsFragment extends Fragment implements AsyncResponse
 
         tagList.setAdapter(tagListAdapter);
         eventList.setAdapter(eventListAdapter);
+
+        postButton = view.findViewById(R.id.PostButton);
 
         tagRefresher.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
@@ -176,6 +183,11 @@ public class EventsFragment extends Fragment implements AsyncResponse
                     toggleLeftMenu(!leftMenuOn);
                 }
                 break;
+            case R.id.PostButton:
+            {
+                myIntent = new Intent(getActivity(), AddEventActivity.class );
+                startActivity(myIntent);
+            }
         }
 
     }
