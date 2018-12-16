@@ -1,36 +1,47 @@
 package cl.uach.inf.bachimovil;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.app.Activity;
+import android.view.View;
+import android.widget.AdapterView;
+import android.widget.ListView;
 
 import java.util.ArrayList;
+
+import static cl.uach.inf.bachimovil.MaterialFragment.resultList;
 
 public class ShowResults extends Activity {
 
     public static ArrayList<Material> modelArrayList;
-    public static ArrayList<Material> resultList;
+    private ListView lv;
     private CustomAdapter customAdapter;
-    private String[] fruitlist = new String[]{"Apples", "Oranges", "Potatoes", "Tomatoes","Grapes","a","b","c","d","e","f"};
-
-    private ArrayList<Material> getModel(){
-        ArrayList<Material> list = new ArrayList<>();
-        for(int i = 0; i < fruitlist.length; i++){
-
-            Material model = new Material();
-            model.setNumber(1);
-            model.setName(fruitlist[i]);
-            model.setUrl(""+(i+1));
-            model.setDate(""+(i+2));
-            model.setDescription((i+3)+" "+(i+4)+" "+(i+5)+" "+(i+6)+" "+(i+7));
-            list.add(model);
-        }
-        return list;
-    }
+    public static Material shownObject;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_results);
+
+        lv = (ListView) findViewById(R.id.lv);
+
+        modelArrayList = MaterialFragment.resultList;
+        customAdapter = new CustomAdapter(this);
+        lv.setAdapter(customAdapter);
+
+        lv.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view,
+                                    int position, long id) {
+                shownObject = modelArrayList.get(position);
+                startActivity(new Intent(ShowResults.this, ShowMaterial.class));
+
+
+
+            }
+        });
+
     }
 
 }

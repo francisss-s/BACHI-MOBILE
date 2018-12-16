@@ -23,7 +23,10 @@
         <activity android:name=".CursosActivity" />
         <activity
             android:name=".ShowResults"
-            android:label="@string/title_activity_show_results"></activity>
+            android:label="@string/title_activity_show_results" />
+        <activity
+            android:name=".ShowMaterial"
+            android:label="@string/title_activity_show_material"></activity>
     </application>
 
 </manifest>

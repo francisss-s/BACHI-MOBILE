@@ -62,7 +62,7 @@ public class CustomAdapter extends BaseAdapter {
         }
 
         holder.tvFruit.setText(ShowResults.modelArrayList.get(position).getName());
-        holder.tvnumber.setText(String.valueOf(ShowResults.modelArrayList.get(position).getNumber()));
+        holder.tvnumber.setText(String.valueOf(ShowResults.modelArrayList.get(position).getLikes()));
 
 
 

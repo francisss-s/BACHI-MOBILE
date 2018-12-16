@@ -31,8 +31,9 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
 
     SearchView searchView;
     CustomAdapter customAdapter;
-    public static ArrayList<Material> modelArrayList;
     public static ArrayList<Material> resultList;
+
+    public static String globalQuery; //esto solo existe para probar la busqueda antes que backend la implemente en servicio.
 
     View view;
 
@@ -61,6 +62,7 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
             public boolean onQueryTextSubmit(String query) {
 
                 //Toast.makeText(getActivity(), query, Toast.LENGTH_LONG).show();
+                globalQuery=query;
                 searchView.setQuery("", false);
                 searchView.clearFocus();
 
@@ -86,7 +88,7 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
         if(v.getId() == R.id.btnConsultaM) {
 
             int randomNum = (int) (24*Math.random()+1);
-
+            globalQuery="all"; //esto es para probar
             ServiceManager serviceManager = new ServiceManager(this.getActivity(),this);
             //serviceManager.callService("http://146.83.216.206/info104/getMaterials.php?tags=");
             serviceManager.callService("http://146.83.216.206/info104/getMaterialsV0.php");
@@ -112,12 +114,58 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
         try
         {
             JSONArray jsonArray = jsonObject.getJSONArray("materials");
+            ArrayList<Material> materiales = new ArrayList<Material>();
             for(int i=0;i<jsonArray.length();i++){
-
-                text += jsonArray.getJSONObject(i).getString("url")+"\n";
+                Material material = new Material();
+                material.setName(jsonArray.getJSONObject(i).getString("name"));
+                material.setUrl(jsonArray.getJSONObject(i).getString("url"));
+                material.setDate(jsonArray.getJSONObject(i).getString("dateCreated"));
+                material.setUserId(jsonArray.getJSONObject(i).getString("userId"));
+                material.setType(jsonArray.getJSONObject(i).getString("type"));
+                material.setDescription(jsonArray.getJSONObject(i).getString("description"));
+                material.setMaterialId(jsonArray.getJSONObject(i).getString("materialId"));
+                ArrayList<String> tagList = new ArrayList<String>();
+                JSONArray tagArray = jsonArray.getJSONObject(i).getJSONArray("tags");
+                int len;
+                if (tagArray == null) {len=0;}
+                else {len=tagArray.length();}
+                System.out.println(len);
+                for(int j=0;j<len;j++){
+                    tagList.add(tagArray.getString(j));
+                }
+                material.setTags(tagList);
+                materiales.add(material);
+            }
+            //busqueda implementada para prueba, en version vinal esto se hace en el servicio
+            if (globalQuery.equalsIgnoreCase("all")){}
+            else {
+                String[] busqueda = globalQuery.split(" ");
+                ArrayList<Material> temp = new ArrayList<Material>();
+                for(int i=0;i<materiales.size();i++){
+                    boolean agregar=false;
+                    for (int j=0; j<materiales.get(i).getTags().size();j++){
+                        for (String s:busqueda){
+                            if (s.equalsIgnoreCase(materiales.get(i).getTags().get(j))){
+                                agregar=true;
+                            }
+                        }
+                        if (agregar==true){
+                            temp.add(materiales.get(i));
+                        }
+                    }
+                }
+                materiales=temp;
+            }
+            //termina busqueda de prueba
+            resultList=materiales;
+            if (resultList.size()>0){
+                Intent intent = new Intent(getActivity(), ShowResults.class);
+                startActivity(intent);
+            }
+            else{
+                mostrarConsultaM.setText("No se encontraron resultados");
             }
 
-            mostrarConsultaM.setText(text);
 
 
         }
