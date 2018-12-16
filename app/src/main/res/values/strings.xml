@@ -13,4 +13,5 @@
 
 
     <string name="title_curso1">Geometría</string>
+    <string name="title_activity_show_results">ShowResults</string>
 </resources>

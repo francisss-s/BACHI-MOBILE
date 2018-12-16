@@ -45,17 +45,17 @@ public class ServiceManager extends AsyncTask<String,Integer,String> {
 
         super.onPreExecute();
 
-        AlertDialog.Builder builder=new AlertDialog.Builder(activityWeakReference.get());
+        //AlertDialog.Builder builder=new AlertDialog.Builder(activityWeakReference.get());
 
-        builder.setTitle(R.string.dialog_wait);
+        //builder.setTitle(R.string.dialog_wait);
 
-        builder.setView(R.layout.dialog_wait);
+        //builder.setView(R.layout.dialog_wait);
 
-        builder.setCancelable(true);
+        //builder.setCancelable(true);
 
-        alertDialog = builder.create();
+        //alertDialog = builder.create();
 
-        alertDialog.show();
+        //alertDialog.show();
 
     }
 
@@ -133,7 +133,7 @@ public class ServiceManager extends AsyncTask<String,Integer,String> {
         try{
             JSONObject jsonObject = new JSONObject(result);
 
-            alertDialog.dismiss();
+            //alertDialog.dismiss();
 
             delegate.obtainServiceResult(jsonObject);
 

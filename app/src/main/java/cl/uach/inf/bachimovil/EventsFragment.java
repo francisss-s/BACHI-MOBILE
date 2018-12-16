@@ -52,7 +52,8 @@ public class EventsFragment extends Fragment implements AsyncResponse{
             int randomNum = (int) (24*Math.random()+1);
 
             ServiceManager serviceManager = new ServiceManager(this.getActivity(),this);
-            serviceManager.callService("http://146.83.216.206/info104/getMaterials.php?tags=");
+            //serviceManager.callService("http://146.83.216.206/info104/getMaterials.php?tags=");
+            serviceManager.callService("http://146.83.216.206/info104/getMaterialsV0.php");
 
         }
 

@@ -77,6 +77,7 @@ public class Main extends AppCompatActivity{
     @TargetApi(Build.VERSION_CODES.N)
     @RequiresApi(api = Build.VERSION_CODES.N)
     public void onClick(View v){
+        materialFragment.onClick(v);
         eventosFragment.onClick(v);
         cursosFragment.onClick(v);
     }
