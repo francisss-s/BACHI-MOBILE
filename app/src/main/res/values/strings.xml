@@ -23,4 +23,9 @@
     <string name="title_activity_nuevo_evento">NuevoEvento</string>
     <string name="appwidget_text">EXAMPLE</string>
     <string name="add_widget">Add widget</string>
+    <string name="nombre_del_evento">Nombre del Evento</string>
+    <string name="descripci_n">Descripción</string>
+    <string name="tags">Tags</string>
+    <string name="fecha">Fecha</string>
+    <string name="hora">Hora</string>
 </resources>

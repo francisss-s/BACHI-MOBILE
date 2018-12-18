@@ -1,10 +1,13 @@
 package cl.uach.inf.bachimovil;
 
 import android.animation.ValueAnimator;
+import android.app.DatePickerDialog;
+import android.content.Intent;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.RequiresApi;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.view.LayoutInflater;
@@ -31,6 +34,8 @@ public class EventsFragment extends Fragment implements AsyncResponse
     JSONArray events = new JSONArray();
     CustomAdapter tagListAdapter;
     EventsAdapter eventListAdapter;
+    Intent intent;
+    Bundle bundle;
 
     // UI Elements
     LinearLayout leftMenu;
@@ -38,6 +43,7 @@ public class EventsFragment extends Fragment implements AsyncResponse
     SwipeRefreshLayout tagRefresher,eventRefresher;
     View view;
     ListView tagList,eventList;
+    TabLayout tabs;
 
     // Constructor
     public EventsFragment() {}
@@ -53,6 +59,7 @@ public class EventsFragment extends Fragment implements AsyncResponse
         hScroll = view.findViewById(R.id.HScroll);
         tagRefresher = view.findViewById(R.id.tagListRefresher);
         eventRefresher = view.findViewById(R.id.eventListRefresher);
+        tabs = view.findViewById(R.id.tabs);
 
         tagListAdapter = new CustomAdapter();
         eventListAdapter = new EventsAdapter();
@@ -83,6 +90,24 @@ public class EventsFragment extends Fragment implements AsyncResponse
                 return true;
             }
         });
+
+        tabs.addOnTabSelectedListener(new TabLayout.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(TabLayout.Tab tab) {
+                state = tab.getPosition();
+            }
+
+            @Override
+            public void onTabUnselected(TabLayout.Tab tab) {
+
+            }
+
+            @Override
+            public void onTabReselected(TabLayout.Tab tab) {
+
+            }
+        });
+
 
         return view;
 
@@ -176,8 +201,19 @@ public class EventsFragment extends Fragment implements AsyncResponse
                     toggleLeftMenu(!leftMenuOn);
                 }
                 break;
+            // New Post Button
+            case R.id.PostButton:
+            {
+                if(state == 1)
+                {
+                    bundle = new Bundle();
+                    intent = new Intent(getActivity(), NuevoEvento.class );
+                    intent.putExtra("userData", "testing");
+                    startActivity(intent);
+                }
+            }
+            break;
         }
-
     }
 
     @Override
