@@ -1,80 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ShowMaterial">
 
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/typeinfo"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
-        android:layout_marginStart="21dp"
-        android:layout_marginTop="39dp"
-        android:text="Nombre:" />
+        android:layout_height="23dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:text="Aqui va el tipo"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/taginfo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/typetitle"
+        app:layout_constraintVertical_bias="0.22" />
 
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/urltitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginTop="132dp"
-        android:text="URL:" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="Url:"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginLeft="16dp" />
 
     <TextView
-        android:id="@+id/textView3"
+        android:id="@+id/typetitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/textView"
-        android:layout_centerVertical="true"
-        android:text="Fecha:" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="10dp"
+        android:text="Tipo de Archivo: "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:typeface="normal"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/urlinfo"
+        android:layout_marginLeft="16dp" />
 
     <TextView
-        android:id="@+id/textView4"
+        android:id="@+id/datetitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignStart="@+id/textView"
-        android:layout_marginBottom="132dp"
-        android:text="Descripcion:" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="80dp"
+        android:text="Subido en: "
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/typetitle" />
 
     <TextView
-        android:id="@+id/nombre"
+        android:id="@+id/tagtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="79dp"
-        android:text="TextView" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Tags: "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/datetitle" />
 
     <TextView
-        android:id="@+id/dire"
+        android:id="@+id/favtitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="193dp"
-        android:text="TextView" />
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="35dp"
+        android:text="Añadir a favoritos"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tagtitle"
+        android:layout_marginLeft="16dp" />
+
+    <ImageView
+        android:id="@+id/favstar"
+        android:layout_width="45dp"
+        android:layout_height="43dp"
+        android:layout_marginEnd="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginTop="288dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <TextView
-        android:id="@+id/fecha"
+        android:id="@+id/desctitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="204dp"
-        android:text="TextView" />
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:text="Descripción: "
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/favtitle" />
 
     <TextView
-        android:id="@+id/descri"
+        android:id="@+id/reporttitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginBottom="61dp"
-        android:text="TextView" />
-</RelativeLayout>
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="120dp"
+        android:layout_marginBottom="29dp"
+        android:text="Reporte este Archivo"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desctitle"
+        android:layout_marginLeft="16dp" />
+
+    <ImageView
+        android:id="@+id/dangereport"
+        android:layout_width="37dp"
+        android:layout_height="30dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginRight="116dp"
+        android:layout_marginStart="29dp"
+        android:layout_marginTop="244dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/reporttitle"
+        app:layout_constraintTop_toBottomOf="@+id/taginfo"
+        app:srcCompat="?android:attr/alertDialogIcon" />
+
+    <TextView
+        android:id="@+id/urlinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="14dp"
+        android:text="Aqui va la url"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/typetitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/urltitle"
+        android:layout_marginLeft="16dp" />
+
+    <TextView
+        android:id="@+id/taginfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="35dp"
+        android:text="Aqui van los tags"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/favtitle"
+        app:layout_constraintStart_toEndOf="@+id/tagtitle"
+        android:layout_marginLeft="20dp" />
+
+    <TextView
+        android:id="@+id/descinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="16dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:text="Aqui va la descripción"
+        android:textSize="20sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desctitle" />
+
+    <TextView
+        android:id="@+id/dateinfo"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="24dp"
+        android:layout_marginStart="24dp"
+        android:text="Fecha"
+        android:textSize="16sp"
+        app:layout_constraintBottom_toTopOf="@+id/taginfo"
+        app:layout_constraintStart_toEndOf="@+id/datetitle"
+        app:layout_constraintTop_toBottomOf="@+id/typetitle"
+        app:layout_constraintVertical_bias="0.8" />
+
+</android.support.constraint.ConstraintLayout>

@@ -26,7 +26,10 @@
             android:label="@string/title_activity_show_results" />
         <activity
             android:name=".ShowMaterial"
-            android:label="@string/title_activity_show_material"></activity>
+            android:label="@string/title_activity_show_material" />
+        <activity
+            android:name=".UploadMaterial"
+            android:label="@string/title_activity_upload_material"></activity>
     </application>
 
 </manifest>
