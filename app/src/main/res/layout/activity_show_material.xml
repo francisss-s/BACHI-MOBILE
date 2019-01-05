@@ -12,8 +12,8 @@
         android:id="@+id/typeinfo"
         android:layout_width="wrap_content"
         android:layout_height="23dp"
-        android:layout_marginLeft="16dp"
-        android:layout_marginStart="16dp"
+        android:layout_marginStart="21dp"
+        android:layout_marginLeft="21dp"
         android:text="Aqui va el tipo"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/taginfo"
@@ -26,14 +26,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="42dp"
         android:text="Url:"
         android:textSize="20sp"
         android:textStyle="bold"
         android:typeface="normal"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:layout_marginLeft="16dp" />
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/typetitle"
@@ -53,10 +53,10 @@
         android:id="@+id/datetitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="16dp"
         android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
         android:layout_marginTop="80dp"
-        android:text="Subido en: "
+        android:text="Publicado el:"
         android:textSize="16sp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/typetitle" />
@@ -90,9 +90,9 @@
         android:id="@+id/favstar"
         android:layout_width="45dp"
         android:layout_height="43dp"
-        android:layout_marginEnd="40dp"
-        android:layout_marginRight="40dp"
-        android:layout_marginTop="288dp"
+        android:layout_marginTop="316dp"
+        android:layout_marginEnd="108dp"
+        android:layout_marginRight="108dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@android:drawable/btn_star_big_on" />
@@ -115,23 +115,22 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="120dp"
-        android:layout_marginBottom="29dp"
-        android:text="Reporte este Archivo"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="100dp"
+        android:text="Reportar este Archivo"
         android:textSize="20sp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/desctitle"
-        android:layout_marginLeft="16dp" />
+        app:layout_constraintTop_toBottomOf="@+id/desctitle" />
 
     <ImageView
         android:id="@+id/dangereport"
         android:layout_width="37dp"
         android:layout_height="30dp"
-        android:layout_marginEnd="116dp"
-        android:layout_marginLeft="29dp"
-        android:layout_marginRight="116dp"
         android:layout_marginStart="29dp"
-        android:layout_marginTop="244dp"
+        android:layout_marginLeft="29dp"
+        android:layout_marginTop="230dp"
+        android:layout_marginEnd="116dp"
+        android:layout_marginRight="116dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toEndOf="@+id/reporttitle"
@@ -140,17 +139,17 @@
 
     <TextView
         android:id="@+id/urlinfo"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
+        android:layout_width="274dp"
+        android:layout_height="23dp"
+        android:layout_marginStart="19dp"
+        android:layout_marginLeft="19dp"
         android:layout_marginTop="13dp"
         android:layout_marginBottom="14dp"
         android:text="Aqui va la url"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/typetitle"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/urltitle"
-        android:layout_marginLeft="16dp" />
+        app:layout_constraintTop_toBottomOf="@+id/urltitle" />
 
     <TextView
         android:id="@+id/taginfo"
@@ -180,13 +179,23 @@
         android:id="@+id/dateinfo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="24dp"
-        android:layout_marginStart="24dp"
+        android:layout_marginStart="18dp"
+        android:layout_marginLeft="18dp"
         android:text="Fecha"
         android:textSize="16sp"
         app:layout_constraintBottom_toTopOf="@+id/taginfo"
         app:layout_constraintStart_toEndOf="@+id/datetitle"
         app:layout_constraintTop_toBottomOf="@+id/typetitle"
         app:layout_constraintVertical_bias="0.8" />
+
+    <TextView
+        android:id="@+id/nameinfo"
+        android:layout_width="0dp"
+        android:layout_height="35dp"
+        android:layout_marginTop="8dp"
+        android:gravity="center"
+        android:text="Nombre del archivo"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="96dp" />
 
 </android.support.constraint.ConstraintLayout>

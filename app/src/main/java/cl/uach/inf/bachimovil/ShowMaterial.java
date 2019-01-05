@@ -13,12 +13,12 @@ public class ShowMaterial extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_material);
         Material thing = ShowResults.shownObject;
-        //TextView nombre = (TextView) findViewById(R.id.nombre);
+        TextView nombre = (TextView) findViewById(R.id.nameinfo);
         TextView dire = (TextView) findViewById(R.id.urlinfo);
         TextView fecha = (TextView) findViewById(R.id.dateinfo);
         TextView descri = (TextView) findViewById(R.id.descinfo);
         TextView tipo = (TextView) findViewById(R.id.typeinfo);
-        //nombre.setText(thing.getName()+"\n");
+        nombre.setText(thing.getName());
         dire.setText(thing.getUrl());
         fecha.setText(thing.getDate());
         descri.setText(thing.getDescription());

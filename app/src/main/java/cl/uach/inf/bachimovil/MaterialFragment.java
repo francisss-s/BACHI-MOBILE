@@ -94,6 +94,13 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
             //serviceManager.callService("http://146.83.216.206/info104/getMaterialsV0.php");
 
         }
+        if(v.getId() == R.id.btnSubirM) {
+
+            int randomNum = (int) (24*Math.random()+1);
+            Intent intent = new Intent(getActivity(), UploadMaterial.class);
+            startActivity(intent);
+
+        }
 
     }
 
