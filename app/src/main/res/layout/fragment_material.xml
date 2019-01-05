@@ -12,32 +12,57 @@
         android:id="@+id/search_mat"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="70dp"
+        android:background="@drawable/background"
+        android:layout_marginBottom="7dp"
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
-        android:layout_marginBottom="7dp" />
+        android:layout_marginTop="100dp" />
 
     <TextView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_marginTop="15sp"
         android:text="@string/title_material"
+        android:textAlignment="center"
         android:textColor="@color/colorAccent"
         android:textSize="28sp"
-        android:textStyle="bold"
-        android:textAlignment="center"
-        android:layout_marginTop="15sp"/>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/btnConsultaM"
         android:layout_width="126dp"
         android:layout_height="wrap_content"
-        android:text="@string/btnConsulta"
+        android:text="Ver Todos"
         android:onClick="onClick"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        android:layout_gravity="center"/>
+        android:layout_gravity="center" />
+    <Button
+        android:id="@+id/btnSubirM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Subir Materiales"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="140sp"/>
+    <Button
+        android:id="@+id/btnFavM"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Ver Favoritos"
+        android:onClick="onClick"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_gravity="center"
+        android:layout_marginTop="70sp"/>
 
     <TextView
         android:id="@+id/resultadoConsultaM"

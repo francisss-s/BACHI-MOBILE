@@ -90,8 +90,8 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
             int randomNum = (int) (24*Math.random()+1);
             globalQuery="all"; //esto es para probar
             ServiceManager serviceManager = new ServiceManager(this.getActivity(),this);
-            //serviceManager.callService("https://api.myjson.com/bins/a02dw");
-            serviceManager.callService("http://146.83.216.206/info104/getMaterialsV0.php");
+            serviceManager.callService("http://146.83.216.206/info104/json_ejemplo.json");
+            //serviceManager.callService("http://146.83.216.206/info104/getMaterialsV0.php");
 
         }
 
@@ -103,8 +103,8 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
         int randomNum = (int) (24*Math.random()+1);
         //Toast.makeText(getActivity(), "Funciono", Toast.LENGTH_LONG).show();
         ServiceManager serviceManager = new ServiceManager(this.getActivity(),this);
-        //serviceManager.callService("https://api.myjson.com/bins/a02dw");
-        serviceManager.callService("http://146.83.216.206/info104/getMaterialsV0.php");
+        serviceManager.callService("http://146.83.216.206/info104/json_ejemplo.json");
+        //serviceManager.callService("http://146.83.216.206/info104/getMaterialsV0.php");
 
 
     }
