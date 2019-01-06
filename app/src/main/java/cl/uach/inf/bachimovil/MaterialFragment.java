@@ -19,6 +19,7 @@ import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 
@@ -195,6 +196,7 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
             //termina busqueda de prueba
             resultList=materiales;
             if (resultList.size()>0){
+                Collections.sort(resultList);
                 Intent intent = new Intent(getActivity(), ShowResults.class);
                 startActivity(intent);
             }

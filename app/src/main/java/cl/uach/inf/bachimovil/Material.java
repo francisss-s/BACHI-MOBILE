@@ -2,7 +2,7 @@ package cl.uach.inf.bachimovil;
 
 import java.util.ArrayList;
 
-public class Material {
+public class Material implements java.lang.Comparable<Material> {
 
     private String name;
     private String url;
@@ -70,6 +70,10 @@ public class Material {
 
     public void setLikes(int likes) {
         this.likes = likes;
+    }
+
+    public int compareTo(Material o){
+        return o.getLikes() - this.getLikes();
     }
 
 }
