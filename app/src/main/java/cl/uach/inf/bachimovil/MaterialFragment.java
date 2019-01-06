@@ -18,6 +18,8 @@ import org.json.JSONArray;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 
 /**
@@ -34,6 +36,8 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
     public static ArrayList<Material> resultList;
 
     public static String globalQuery; //esto solo existe para probar la busqueda antes que backend la implemente en servicio.
+
+    public static String[] favArray = new String[]{"87459821", "87654587", "78654398"}; //esto existe para probar sistem de favoritos sin el backend
 
     View view;
 
@@ -88,7 +92,7 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
         if(v.getId() == R.id.btnConsultaM) {
 
             int randomNum = (int) (24*Math.random()+1);
-            globalQuery="all"; //esto es para probar
+            globalQuery="all%%%"; //esto es para probar
             ServiceManager serviceManager = new ServiceManager(this.getActivity(),this);
             serviceManager.callService("http://146.83.216.206/info104/json_ejemplo.json");
             //serviceManager.callService("http://146.83.216.206/info104/getMaterialsV0.php");
@@ -100,6 +104,14 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
             Intent intent = new Intent(getActivity(), UploadMaterial.class);
             startActivity(intent);
 
+        }
+        if(v.getId() == R.id.btnFavM) {
+
+            int randomNum = (int) (24*Math.random()+1);
+            globalQuery="favoritos%%%"; //esto es para probar
+            ServiceManager serviceManager = new ServiceManager(this.getActivity(),this);
+            serviceManager.callService("http://146.83.216.206/info104/json_ejemplo.json");
+            //serviceManager.callService("http://146.83.216.206/info104/getMaterialsV0.php");
         }
 
     }
@@ -141,10 +153,27 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
                     tagList.add(tagArray.getString(j));
                 }
                 material.setTags(tagList);
+
+                material.setLikes((int) (24*Math.random()+1)); //esto es para simular sistema de likes
+
                 materiales.add(material);
             }
             //busqueda implementada para prueba, en version vinal esto se hace en el servicio
-            if (globalQuery.equalsIgnoreCase("all")){}
+            if (globalQuery.equalsIgnoreCase("all%%%")){}
+            else if (globalQuery.equalsIgnoreCase("favoritos%%%")){
+                String[] busqueda = favArray;
+                ArrayList<Material> temp = new ArrayList<Material>();
+                for(int i=0;i<materiales.size();i++){
+                    for (String s:busqueda){
+                        if (s.equalsIgnoreCase(materiales.get(i).getMaterialId())){
+                            temp.add(materiales.get(i));
+                        }
+                    }
+                }
+                materiales=temp;
+
+
+            }
             else {
                 String[] busqueda = globalQuery.split(" ");
                 ArrayList<Material> temp = new ArrayList<Material>();
