@@ -38,7 +38,9 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
 
     public static String globalQuery; //esto solo existe para probar la busqueda antes que backend la implemente en servicio.
 
-    public static String[] favArray = new String[]{"87459821", "87654587", "78654398"}; //esto existe para probar sistem de favoritos sin el backend
+    public static String[] favArray = new String[]{"87459821", "87654587", "78654398"};
+    public static ArrayList<String> favList = new ArrayList<String>(Arrays.asList(favArray));
+    //esto existe para probar sistem de favoritos sin el backend
 
     View view;
 
@@ -162,11 +164,10 @@ public class MaterialFragment extends Fragment implements AsyncResponse {
             //busqueda implementada para prueba, en version vinal esto se hace en el servicio
             if (globalQuery.equalsIgnoreCase("all%%%")){}
             else if (globalQuery.equalsIgnoreCase("favoritos%%%")){
-                String[] busqueda = favArray;
                 ArrayList<Material> temp = new ArrayList<Material>();
                 for(int i=0;i<materiales.size();i++){
-                    for (String s:busqueda){
-                        if (s.equalsIgnoreCase(materiales.get(i).getMaterialId())){
+                    for (int j=0;j<favList.size();j++){
+                        if (favList.get(j).equalsIgnoreCase(materiales.get(i).getMaterialId())){
                             temp.add(materiales.get(i));
                         }
                     }
