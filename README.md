@@ -1,11 +1,4 @@
 # Bachmovil
 
-App de INFO-104, Altum Videtur:
+app de info 104.
 
-Ignacio Castro
-
-Jhonatan Friz
-
-Felipe Loncomilla 
-
-Gustavo Medina
