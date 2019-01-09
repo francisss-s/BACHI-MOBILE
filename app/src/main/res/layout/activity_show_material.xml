@@ -180,6 +180,7 @@ android:fillViewport="true">
             android:layout_marginStart="19dp"
             android:layout_marginTop="13dp"
             android:text="Aqui va la url"
+            android:autoLink="web"
             android:textSize="20sp"
             app:layout_constraintBottom_toTopOf="@+id/typetitle"
             app:layout_constraintEnd_toEndOf="parent"
