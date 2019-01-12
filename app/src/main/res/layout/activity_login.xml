@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".Login">
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="163dp"
+        android:layout_height="163dp"
+        android:layout_marginTop="20dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/uach"
+        android:contentDescription="@null" />
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+
+        <EditText android:id="@+id/Email"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Email" />
+    </android.support.design.widget.TextInputLayout>
+
+    <android.support.design.widget.TextInputLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="8dp">
+
+        <EditText android:id="@+id/Contraseña"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="textEmailAddress"
+            android:layout_marginStart="20dp"
+            android:layout_marginEnd="20dp"
+            android:hint="Contraseña" />
+    </android.support.design.widget.TextInputLayout>
+
+    <Button android:id="@+id/botonIngresar"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Ingresar"
+        android:layout_gravity="center"
+        android:background="#39B54A"/>
+
+    <Button android:id="@+id/botonRegistrar"
+        android:layout_marginTop="5dp"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:text="Registrarse"
+        android:layout_gravity="center"
+        android:background="#39B54A"/>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="¿Olvidaste tu contraseña?"/>
+
+    <Button android:id="@+id/recuperarContraseña"
+        android:layout_width="200dp"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:text="Recuperar contraseña"
+        android:background="#39B54A"/>
+
+
+
+</LinearLayout>
